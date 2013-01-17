@@ -4,12 +4,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Symfony2 HttpKernel Component
 Name:		php-symfony2-HttpKernel
-Version:	2.1.4
+Version:	2.1.6
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	bdc00053a95a4cf141e391e76fcfc5a0
+# Source0-md5:	83b4694cb6151fbb5d2e30257c5b0f5a
 URL:		http://pear.symfony.com/package/HttpKernel/
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR >= 1:1.4.0

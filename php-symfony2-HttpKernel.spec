@@ -1,16 +1,15 @@
-%define		status		stable
 %define		pearname	HttpKernel
 %define		php_min_version 5.3.3
 %include	/usr/lib/rpm/macros.php
-Summary:	%{pearname} - Symfony2 HttpKernel Component
+Summary:	Symfony2 HttpKernel Component
 Name:		php-symfony2-HttpKernel
-Version:	2.1.6
+Version:	2.3.4
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	83b4694cb6151fbb5d2e30257c5b0f5a
-URL:		http://pear.symfony.com/package/HttpKernel/
+# Source0-md5:	b3b1442b35d201cf9061f2f01e71dd29
+URL:		http://symfony.com/doc/current/components/http_kernel/introduction.html
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR >= 1:1.4.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -30,21 +29,19 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Symfony2 HttpKernel Component
-
-In PEAR status of this package is: %{status}.
+The HttpKernel Component provides a structured process for converting
+a Request into a Response by making use of the event dispatcher. It's
+flexible enough to create a full-stack framework (Symfony), a
+micro-framework (Silex) or an advanced CMS system (Drupal).
 
 %prep
 %pear_package_setup
 
 # no packaging of tests
-rm -r .%{php_pear_dir}/Symfony/Component/%{pearname}/Tests
-rm .%{php_pear_dir}/Symfony/Component/%{pearname}/phpunit.xml.dist
+mv .%{php_pear_dir}/Symfony/Component/%{pearname}/Tests .
+mv .%{php_pear_dir}/Symfony/Component/%{pearname}/phpunit.xml.dist .
 
 # fixups
-mv .%{php_pear_dir}/Symfony/Component/%{pearname}/CHANGELOG.md .
-rm .%{php_pear_dir}/Symfony/Component/%{pearname}/.gitattributes
-rm .%{php_pear_dir}/Symfony/Component/%{pearname}/.gitignore
 mv docs/%{pearname}/Symfony/Component/%{pearname}/* .
 
 %install
@@ -72,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/Symfony/Component/HttpKernel/Event
 %{php_pear_dir}/Symfony/Component/HttpKernel/EventListener
 %{php_pear_dir}/Symfony/Component/HttpKernel/Exception
+%{php_pear_dir}/Symfony/Component/HttpKernel/Fragment
 %{php_pear_dir}/Symfony/Component/HttpKernel/HttpCache
 %{php_pear_dir}/Symfony/Component/HttpKernel/Log
 %{php_pear_dir}/Symfony/Component/HttpKernel/Profiler

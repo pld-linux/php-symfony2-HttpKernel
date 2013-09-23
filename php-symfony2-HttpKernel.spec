@@ -17,8 +17,10 @@ BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
 Requires:	php-channel(pear.symfony.com)
 Requires:	php-pear >= 4:1.3.10
-Requires:	php-symfony2-EventDispatcher
-Requires:	php-symfony2-HttpFoundation
+Requires:	php-psr-Log >= 1.0
+Requires:	php-symfony2-Debug >= 2.3
+Requires:	php-symfony2-EventDispatcher >= 2.1
+Requires:	php-symfony2-HttpFoundation >= 2.2
 Suggests:	php-symfony2-BrowserKit
 Suggests:	php-symfony2-ClassLoader
 Suggests:	php-symfony2-Config

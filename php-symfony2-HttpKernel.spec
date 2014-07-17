@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpKernel Component
 Name:		php-symfony2-HttpKernel
-Version:	2.4.3
+Version:	2.4.4
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	0280a31c071bc4df6eb716b3fbeeed07
+# Source0-md5:	8bf815533398b6a0d61455ea6aa88076
 URL:		http://symfony.com/doc/2.4/components/http_kernel/introduction.html
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR >= 1:1.4.0

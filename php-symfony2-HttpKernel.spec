@@ -45,7 +45,7 @@ micro-framework (Silex) or an advanced CMS system (Drupal).
 %setup -q -n %{pearname}-%{version}
 
 %build
-phpab -n -e '*/Tests/*' -o autoload.php .
+phpab -n -e '*/Tests/*' -o autoloader.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT

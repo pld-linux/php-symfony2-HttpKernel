@@ -1,15 +1,15 @@
-%define		pearname	HttpKernel
-%define		php_min_version 5.3.3
+%define		package	HttpKernel
+%define		php_min_version 5.3.9
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpKernel Component
 Name:		php-symfony2-HttpKernel
-Version:	2.4.8
+Version:	2.7.3
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
-Source0:	https://github.com/symfony/%{pearname}/archive/v%{version}/%{pearname}-%{version}.tar.gz
-# Source0-md5:	d808e3c915adace99d6dcbc9cd2f1eae
-URL:		http://symfony.com/doc/2.4/components/http_kernel/introduction.html
+Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
+# Source0-md5:	28a4b5f88ad600cd143df94bcc8a4c8a
+URL:		http://symfony.com/doc/2.7/components/http_kernel/introduction.html
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
@@ -23,15 +23,17 @@ Requires:	php(spl)
 Requires:	php(tokenizer)
 Requires:	php-pear >= 4:1.3.10
 Requires:	php-psr-Log >= 1.0
-Requires:	php-symfony2-Debug >= 2.3
-Requires:	php-symfony2-EventDispatcher >= 2.1
-Requires:	php-symfony2-HttpFoundation >= 2.2
+Requires:	php-symfony2-Debug >= 2.6.2
+Requires:	php-symfony2-EventDispatcher >= 2.6.7
+Requires:	php-symfony2-HttpFoundation >= 2.5.4
 Suggests:	php-symfony2-BrowserKit
 Suggests:	php-symfony2-ClassLoader
 Suggests:	php-symfony2-Config
 Suggests:	php-symfony2-Console
 Suggests:	php-symfony2-DependencyInjection
 Suggests:	php-symfony2-Finder
+#Suggests:	php-symfony2-VarDumper
+Conflicts:	php-symfony2-Config < 2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,16 +44,16 @@ flexible enough to create a full-stack framework (Symfony), a
 micro-framework (Silex) or an advanced CMS system (Drupal).
 
 %prep
-%setup -q -n %{pearname}-%{version}
+%setup -q -n %{package}-%{version}
 
 %build
 phpab -n -e '*/Tests/*' -o autoloader.php .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{pearname}
-cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{pearname}
-rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{pearname}/Tests
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
+cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}
+rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{package}/Tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT

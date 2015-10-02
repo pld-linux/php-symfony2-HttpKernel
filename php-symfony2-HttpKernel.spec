@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpKernel Component
 Name:		php-symfony2-HttpKernel
-Version:	2.7.3
+Version:	2.7.5
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	28a4b5f88ad600cd143df94bcc8a4c8a
+# Source0-md5:	b2c87b601a436ccda9c6eaffeeca09c3
 URL:		http://symfony.com/doc/2.7/components/http_kernel/introduction.html
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -44,7 +44,7 @@ flexible enough to create a full-stack framework (Symfony), a
 micro-framework (Silex) or an advanced CMS system (Drupal).
 
 %prep
-%setup -q -n %{package}-%{version}
+%setup -q -n http-kernel-%{version}
 
 %build
 phpab -n -e '*/Tests/*' -o autoloader.php .

@@ -20,6 +20,7 @@ Requires:	php(pcre)
 Requires:	php(session)
 Requires:	php(spl)
 Requires:	php(tokenizer)
+Requires:	php-dirs >= 1.6
 Requires:	php-psr-Log >= 1.0
 Requires:	php-symfony2-Debug >= 2.6.2
 Requires:	php-symfony2-EventDispatcher >= 2.6.7

@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpKernel Component
 Name:		php-symfony2-HttpKernel
-Version:	2.7.7
+Version:	2.7.8
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	75cbe9e50a7c17399dc780f8e460e64a
+# Source0-md5:	b1694ec7fb491d15d53a326624952cd5
 URL:		http://symfony.com/doc/2.7/components/http_kernel/introduction.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610

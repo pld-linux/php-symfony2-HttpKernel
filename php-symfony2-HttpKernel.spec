@@ -1,6 +1,5 @@
 %define		package	HttpKernel
 %define		php_min_version 5.3.9
-%include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpKernel Component
 Name:		php-symfony2-HttpKernel
 Version:	2.7.8
